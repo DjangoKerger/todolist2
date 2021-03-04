@@ -17,7 +17,7 @@ const TodoList = () => {
 
     const updateTodo = (todoId, newValue) => {
         if(!newValue.text ||/^\s*$/.test(newValue.text)) {
-            return
+            return;
         }
         setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
 
@@ -35,7 +35,8 @@ const TodoList = () => {
                 todo.isComplete = !todo.isComplete
             }
             return todo;
-        })
+        });
+        setTodos(updatedTodos);
     }
 
 
